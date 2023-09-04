@@ -9,6 +9,9 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.json("BASE API ENDPOINT");
+});
 app.use("/user", userController);
 app.use(authentication);
 app.use("/notes", noteController);
